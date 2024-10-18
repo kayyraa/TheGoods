@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Account</title>
+
+        <link rel="stylesheet" href="./scripts/style/account.css">
+        <link rel="stylesheet" href="./scripts/style/style.css">
+        <link rel="stylesheet" href="./scripts/style/format.css">
+
+        <link rel="shortcut icon" href="./media/images/Favicon.svg" type="image/x-icon">
+
+        <script type="module" src="./scripts/account.js"></script>
+        <script type="module" src="./scripts/api.js"></script>
+
+        <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/9.12.0/firebase-storage.js"></script>
+    </head>
+    <body>
+        <div class="Topbar">
+            <div onclick="location.reload()">
+                <img draggable="false" src="./media/images/Favicon.svg">
+                <header>Account</header>
+            </div>
+        </div>
+
+        <div class="Account">
+            <header>Sign Up</header>
+            <input id="UsernameInput" placeholder="Username" type="text">
+            <input id="PasswordInput" placeholder="Password" type="password">
+            <div id="SubmitButton" button>Submit</div>
+        </div>
+    </body>
+</html>
