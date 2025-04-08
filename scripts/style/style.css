@@ -1,0 +1,513 @@
+.Dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    position: absolute;
+    width: 16em;
+    height: fit-content;
+
+
+    padding: 4px;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+
+    border-radius: 8px;
+
+    z-index: 12;
+
+    transition: opacity 0.25s ease;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.Dropdown > div {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+
+    width: calc(100% - 12px);
+    height: 24px;
+
+    padding: 4px 6px;
+    border-radius: 6px;
+    transition: background-color 0.25s ease;
+    cursor: pointer;
+}
+
+.Dropdown > div:hover {
+    background-color: rgba(205, 205, 205, 0.125);
+}
+
+.Dropdown > div > img {
+    height: 22px;
+    width: 22px;
+}
+
+.Dropdown > div img[button] {
+    background-color: rgba(205, 205, 205, 0.125);
+    padding: 4px;
+    border-radius: 6px;
+    
+    height: calc(100% - 8px);
+    aspect-ratio: 1 / 1;
+
+    cursor: pointer;
+
+    transition: background-color 0.25s ease;
+}
+
+.Dropdown > div > div {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 8px;
+
+    width: 100%;
+    height: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.Dropdown > div > div > img {
+    height: 22px;
+    width: 22px;
+}
+
+.Dropdown > hr {
+    width: 100%;
+    border-color: rgba(205, 205, 205, 0.5);
+    margin: 0
+}
+
+.Glyph {
+    position: relative;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.Glyph > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.Action {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 8px;
+
+    position: absolute;
+    left: 0;
+    top: 85%;
+
+    width: 100%;
+    height: 2em;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+.Action > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    margin-left: 8px;
+
+    background-color: color-mix(in srgb, rgba(255, 255, 255, 0.0625), rgba(255, 255, 255, 0.125));
+    width: fit-content;
+
+    padding: 4px 1em;
+    border-radius: 8px;
+
+    transition: all 0.25s ease;
+}
+
+.NotificationContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 2;
+}
+
+.NotificationContainer > div {
+    margin-top: 8px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: rgb(60, 120, 175);
+    border-radius: 8px;
+
+    padding: 4px 1em;
+    padding-right: 2em;
+
+    min-width: 18em;
+    min-height: 24px;
+
+    transition: all 0.25s ease;
+}
+
+.NotificationContainer > div > span {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 4px;
+    font-weight: 600;
+}
+
+.NotificationContainer > div > img {
+    position: absolute;
+    right: 6px;
+    height: 24px;
+}
+
+.Frames {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.Frames > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    transition: all 0.25s ease, left 0.5s ease;
+}
+
+.Frames > div > .Content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    position: absolute;
+    left: 0;
+    top: 2em;
+    width: 100%;
+    height: calc(100% - 2em);
+
+    padding: 8px;
+}
+
+.Frames > div > .Content > div {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+    background-color: rgba(255, 255, 255, 0.125);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.Frames > div > .Content > div[space-between] {
+    justify-content: space-between;
+}
+
+.Frames > div > .Content > div[space-between] > * {
+    width: 100%;
+    text-align: center;
+}
+
+.Frames > div > .Content header {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.Prompt {
+    transform: translate(-50%, -50%);
+
+    min-width: 50%;
+    max-width: 100%;
+
+    min-height: 50%;
+    max-height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.Prompt > .Topbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: 8px;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2em;
+
+    background-color: transparent;
+    backdrop-filter: initial;
+
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+    user-select: none;
+
+    z-index: 2;
+}
+
+.Prompt > .Topbar > div[button] {
+    padding: 0;
+    margin: 0;
+    aspect-ratio: 1 / 1;
+
+    text-align: center;
+    align-content: center;
+
+    background-color: rgba(0, 0, 0, 0.25);
+    height: 100%;
+
+    cursor: pointer;
+}
+
+.Prompt > .Content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+    position: absolute;
+    left: 0;
+    top: 2em;
+    height: calc(100% - 2em);
+
+    margin: 8px;
+}
+
+.Prompt > .Content textarea,
+.Prompt > .Content input[type="text"] {
+    outline: none;
+    background-color: transparent !important;
+    color: rgb(255, 255, 255);
+
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.Prompt > .Content button {
+    outline: none;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    cursor: pointer;
+}
+
+.Prompt > .Content button,
+.Prompt > .Content textarea,
+.Prompt > .Content input[type="text"] {
+    padding: 0 8px 0 8px;
+    min-height: 2em;
+    max-height: 2em;
+}
+
+.Prompt > .Content button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.Prompt > .Content header {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.Topbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
+
+    position: fixed;
+    width: calc(100% - 1em);
+    height: 2em;
+    left: 0;
+    top: 0;
+
+    padding: 0 8px;
+
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    z-index: 4;
+}
+
+.Topbar > * {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.Topbar > * > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.Topbar > * header {
+    font-weight: 600;
+}
+
+.Topbar > * img {
+    height: 18px;
+}
+
+.Discover {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: calc(1em + 8px);
+
+    padding-left: calc(1em + 8px);
+
+    position: absolute;
+    width: 100%;
+    height: 17em;
+    top: calc(25% + 2em);
+    left: 0;
+    transform: translateY(-50%);
+    
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.Discover > div {
+    position: relative;
+    width: 15em;
+    max-height: 90%;
+    
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 2px solid rgb(255, 255, 255);
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.Discover > div:hover {
+    scale: 1.0625;
+}
+
+.Discover > div > img {
+    width: 100%;
+    height: 100%;
+}
+
+.Discover > div > .Name {
+    position: absolute;
+    width: 100%;
+    height: 24px;
+    left: 0;
+    top: 0;
+
+    text-align: center;
+    font-weight: 600;
+    
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.Discover > div > .Price {
+    position: absolute;
+    width: 100%;
+    height: 2em;
+    left: 0;
+    bottom: 0;
+    font-size: 18px;
+    font-weight: 600;
+    align-content: center;
+    padding-left: 8px;
+
+    background-color: rgba(90, 140, 90, 0.5);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.Discover > div > .Offer {
+    position: absolute;
+    width: fit-content;
+    height: 2em;
+    right: 8px;
+    bottom: 0;
+    font-size: 18px;
+    font-weight: 600;
+    align-content: center;
+    padding: 2px 8px;
+
+    background-color: rgba(90, 140, 90);
+    height: 24px;
+    bottom: 4px;
+    border-radius: 8px;
+
+    z-index: 2;
+
+    transition: all 0.25s ease;
+}
+
+.Discover > div:hover > .Offer {
+    background-color: rgba(90, 180, 90);
+}
+
+.Discover > div > img {
+    height: 100%;
+}

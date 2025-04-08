@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>TheGoods</title>
+
+        <link rel="shortcut icon" href="images/Favicon.svg" type="image/x-icon">
+
+        <link rel="stylesheet" href="scripts/style/format.css">
+        <link rel="stylesheet" href="scripts/style/style.css">
+        
+        <script type="module" src="scripts/global.d.js"></script>
+        <script type="module" src="scripts/account.js"></script>
+        <script type="module" src="scripts/hud.js"></script>
+    </head>
+    <body>
+        <div class="Dropdown"></div>
+        <div class="Frames">
+            <div href="Home">
+                <div class="Topbar">
+                    <div>
+                        <img src="images/Favicon.svg">
+                        <header>TheGoods</header>
+                    </div>
+                    <div class="Search">
+                        <img src="images/Search.svg">
+                        <input style="width: 50em;" type="text" placeholder="Search items">
+                    </div>
+                    <div>
+                        <div class="Button Cart" style="background-color: rgb(90, 90, 140);">
+                            <img src="images/Cart.svg">
+                            <header>Cart (Empty)</header>
+                        </div>
+                        <div class="Button Wallet" style="background-color: rgb(90, 140, 90);">
+                            <header>0.00$</header>
+                        </div>
+                        <div>
+                            <span class="Button AccountButton">Sign In</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="Content">
+                    <div class="Discover"></div>
+                </div>
+                <div class="NotificationContainer"></div>
+                <div class="Action"></div>
+            </div>
+            <div href="Wallet">
+                <div class="Topbar">
+                    <div>
+                        <img src="images/Favicon.svg">
+                        <header>Wallet</header>
+                    </div>
+                    <div>
+                        <div class="Button Wallet" style="background-color: rgb(90, 140, 90);">
+                            <header>0.00$</header>
+                        </div>
+                        <div class="Button ReturnHome" style="background-color: rgb(90, 90, 90);">
+                            <header>Return</header>
+                        </div>
+                        <div>
+                            <span class="Button AccountButton">Sign In</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="Content">
+                    <div style="
+                        flex-direction: column;
+                        max-height: 10em;
+                        
+                        overflow-x: hidden;
+                        overflow-y: auto;
+                    " class="TransactionHistory">
+                        <header>Local Transaction History</header>
+                        <hr style="width: 100%;">
+                    </div>
+                    <div space-between sync="width:.TransactionHistory:offsetWidth:px" padding="-16">
+                        <span class="Button Send">Send</span>
+                        <span style="background-color: rgb(90, 140, 90);" class="Button Claim">Claim</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
